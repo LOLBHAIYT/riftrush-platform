@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="108" fill="#09101d"/>
+  <circle cx="256" cy="228" r="126" fill="#0d1422"/>
+  <circle cx="256" cy="228" r="108" fill="none" stroke="#ff5d44" stroke-width="30"/>
+  <path d="M146 242C154 170 194 122 256 122C318 122 358 170 366 242L330 221C315 180 292 161 256 161C220 161 197 180 182 221L146 242Z" fill="#1b2233"/>
+  <path d="M177 251C177 196 211 157 256 157C301 157 335 196 335 251V271C335 319 301 355 256 355C211 355 177 319 177 271V251Z" fill="#141b29"/>
+  <path d="M210 257C223 243 238 236 256 236C274 236 289 243 302 257C289 274 274 282 256 282C238 282 223 274 210 257Z" fill="#ff8b2d"/>
+  <path d="M206 205L178 186L170 227L198 226Z" fill="#42f0cf"/>
+  <path d="M306 205L334 186L342 227L314 226Z" fill="#42f0cf"/>
+  <text x="256" y="439" text-anchor="middle" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#f8fbff">AX</text>
+</svg>

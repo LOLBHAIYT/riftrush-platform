@@ -1,0 +1,12 @@
+{
+  "appId": "com.riftrush.play",
+  "appName": "RiftRush",
+  "webDir": ".",
+  "server": {
+    "url": "https://arenax-platform.onrender.com",
+    "cleartext": false
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}

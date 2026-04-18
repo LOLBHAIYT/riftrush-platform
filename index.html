@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090612">
+  <title>RiftRush | Tournament Gaming Platform</title>
+  <meta name="description" content="RiftRush is a mobile-first tournament gaming platform with hosted contests, wallet flow, rankings, rewards, and admin controls.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero" id="home">
+      <nav class="navbar">
+        <div class="brand">
+          <img class="brand-logo" src="arenax-battle-logo.svg" alt="RiftRush logo">
+          <div>
+            <p>RiftRush</p>
+            <span>Play. Rank. Win.</span>
+          </div>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">Menu</button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#features">Features</a>
+          <a href="#tournaments">Tournaments</a>
+          <a href="#stats">Stats</a>
+          <a href="#download">Download</a>
+          <button class="ghost-button" id="openAdminNav">Admin Login</button>
+          <button class="ghost-button" id="openAuth">Login / Signup</button>
+          <button class="primary-button" id="openModal">Join Match</button>
+        </div>
+      </nav>
+
+      <section class="hero-layout">
+        <div class="hero-copy">
+          <span class="eyebrow">Skill-based tournament platform</span>
+          <h1>Enter live contests, track rewards, and play through a sharper gaming website.</h1>
+          <p>
+            RiftRush is built for Free Fire players who want a stronger tournament experience:
+            fast match entry, cleaner UI, mobile-first flow, wallet support, rankings, and hosted events.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-button" id="heroRegister">Join Live Match</button>
+            <button class="secondary-button" id="heroAuth">Create Account</button>
+          </div>
+
+          <div class="hero-highlights">
+            <article>
+              <strong>Fast & Genuine</strong>
+              <span>Payout and deposit flow designed for quick action.</span>
+            </article>
+            <article>
+              <strong>Fair Competition</strong>
+              <span>Skill-based contests with cleaner player entry.</span>
+            </article>
+            <article>
+              <strong>Daily Rooms</strong>
+              <span>Hosted tournaments, spotlight matches, and rank pushing.</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-logo-card">
+            <img class="hero-logo" src="arenax-battle-logo.svg" alt="RiftRush logo">
+          </div>
+          <div class="phone-preview">
+            <div class="phone-frame">
+              <div class="phone-topbar">
+                <span>RiftRush</span>
+                <span>Rs 0.00</span>
+              </div>
+              <div class="phone-banner">Exclusive Room Drops</div>
+              <div class="phone-shortcuts">
+                <div>Support</div>
+                <div>WhatsApp</div>
+                <div>Video</div>
+                <div>Wallet</div>
+              </div>
+              <div class="phone-contests">
+                <article>Prime Clash</article>
+                <article>Solo Storm</article>
+              </div>
+              <div class="phone-bottom">
+                <span>Earn</span>
+                <span>Rank</span>
+                <span class="active-nav">Home</span>
+                <span>Wallet</span>
+                <span>Account</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="stats-strip" id="stats">
+        <article>
+          <strong>50K+</strong>
+          <span>Tournaments</span>
+        </article>
+        <article>
+          <strong>100K+</strong>
+          <span>Gamers</span>
+        </article>
+        <article>
+          <strong>Rs 1.2L+</strong>
+          <span>Rewards</span>
+        </article>
+        <article>
+          <strong>24/7</strong>
+          <span>Support</span>
+        </article>
+      </section>
+
+      <section class="section" id="download">
+        <div class="section-heading">
+          <span>Download App</span>
+          <h2>Open the website and install RiftRush like a real tournament app</h2>
+        </div>
+
+        <div class="download-grid">
+          <article class="promo-panel major-panel">
+            <div>
+              <span class="eyebrow">Install Ready</span>
+              <h3>Launch contests faster from your home screen.</h3>
+              <p>Use the install flow to open RiftRush like an app, then jump into matches, wallet actions, and hosted contests.</p>
+            </div>
+            <div class="hero-actions">
+              <button class="primary-button" id="installAppButton">Install App</button>
+              <button class="secondary-button" id="demoAuthSwitch">Open Player Access</button>
+            </div>
+            <p class="form-message" id="installMessage"></p>
+          </article>
+
+          <article class="promo-panel side-panel">
+            <h3>Quick Match Access</h3>
+            <p>Players can open the public site, install it, and get to tournaments with less friction.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt-section" id="features">
+        <div class="section-heading">
+          <span>Experience The Rush</span>
+          <h2>Everything needed for a stronger competitive gaming website</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Fair Play</h3>
+            <p>Matches are structured around player trust, cleaner entries, and a more focused contest flow.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Fast Performance</h3>
+            <p>The platform is built to feel light, quick, and mobile-first for tournament players.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Free Matches</h3>
+            <p>Highlight open contests and bring in new users with visible free-entry opportunities.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Skill-Based Rooms</h3>
+            <p>The whole product is framed around players competing and earning through real actions.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Create Account</h3>
+            <p>Fast signup, UID-ready access, and player onboarding built for tournament flow.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Instant Support</h3>
+            <p>Support, community, and wallet help can stay close to the player journey.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="tournaments">
+        <div class="section-heading">
+          <span>Featured Contests</span>
+          <h2>Live room cards and premium contest blocks built for conversion</h2>
+        </div>
+        <div class="contest-grid" id="tournamentGrid"></div>
+      </section>
+
+      <section class="section alt-section">
+        <div class="section-heading">
+          <span>Wallet & Rewards</span>
+          <h2>Deposit, earn, rank, and manage rewards from one connected platform</h2>
+        </div>
+
+        <div class="wallet-showcase">
+          <article class="wallet-summary-card">
+            <div class="wallet-summary-grid">
+              <div>
+                <span>Total Balance</span>
+                <strong>Rs 0.00</strong>
+              </div>
+              <div>
+                <span>Deposited</span>
+                <strong>Rs 0.00</strong>
+              </div>
+              <div>
+                <span>Winning</span>
+                <strong>Rs 0.00</strong>
+              </div>
+              <div>
+                <span>Payouts</span>
+                <strong>0</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="wide-banner">
+            <div>
+              <strong>Join our WhatsApp Channel</strong>
+              <span>Room updates, event news, and fast player communication.</span>
+            </div>
+          </article>
+
+          <article class="wide-banner alt-banner">
+            <div>
+              <strong>How To Add Coins</strong>
+              <span>Scan the QR, submit the reference, and move into premium rooms.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="wallet">
+        <div class="section-heading">
+          <span>Wallet Deposit</span>
+          <h2>Add balance before entering premium tournaments and reward rooms</h2>
+        </div>
+
+        <div class="wallet-grid">
+          <article class="wallet-card">
+            <div class="wallet-top">
+              <div>
+                <h3>Scan and deposit</h3>
+                <p>Use the payment QR to add wallet balance quickly before joining paid contests.</p>
+              </div>
+              <span class="wallet-limit">Min Rs 10 / Max Rs 1000</span>
+            </div>
+            <img class="qr-image" src="payment-qr.jpg" alt="Payment QR code for wallet deposit">
+          </article>
+
+          <article class="wallet-card">
+            <h3>Submit Deposit</h3>
+            <p>Players add amount and payment reference, then the host verifies it privately.</p>
+            <form class="register-form" id="depositForm">
+              <label>
+                Deposit Amount
+                <input type="number" name="amount" min="10" max="1000" placeholder="Enter amount between 10 and 1000" required>
+              </label>
+              <label>
+                Payment Reference
+                <input type="text" name="reference" placeholder="Enter payment reference or UTR" required>
+              </label>
+              <button class="primary-button submit-button" type="submit">Submit Deposit</button>
+              <p class="form-message" id="depositMessage"></p>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt-section" id="referrals">
+        <div class="section-heading">
+          <span>Referral Rewards</span>
+          <h2>Reward growth when players sign up, deposit, and join real contests</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Auto Referral Code</h3>
+            <p>Every player account gets a unique code ready to share.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Tracked Signup</h3>
+            <p>Referred users connect through a clean optional referral field.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Reward Trigger</h3>
+            <p>Bonus unlocks after deposit and at least one joined contest.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="leaderboard">
+        <div class="section-heading">
+          <span>Platform Stats</span>
+          <h2>Numbers that make the product feel active, trusted, and competitive</h2>
+        </div>
+
+        <div class="leaderboard">
+          <div class="leaderboard-head">
+            <span>Rank</span>
+            <span>Metric</span>
+            <span>Value</span>
+            <span>Status</span>
+          </div>
+          <div class="leaderboard-row">
+            <span>#1</span>
+            <span>Tournaments</span>
+            <span>50K+</span>
+            <span>Live</span>
+          </div>
+          <div class="leaderboard-row">
+            <span>#2</span>
+            <span>Gamers</span>
+            <span>100K+</span>
+            <span>Active</span>
+          </div>
+          <div class="leaderboard-row">
+            <span>#3</span>
+            <span>Rewards</span>
+            <span>1.2L+</span>
+            <span>Processed</span>
+          </div>
+          <div class="leaderboard-row">
+            <span>#4</span>
+            <span>Claims</span>
+            <span>60K</span>
+            <span>Completed</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt-section hidden" id="dashboardSection">
+        <div class="section-heading">
+          <span>Player Dashboard</span>
+          <h2>Your account overview, referral center, and wallet summary</h2>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="feature-card dashboard-card">
+            <h3 id="dashboardName">Player Name</h3>
+            <p id="dashboardEmail">player@example.com</p>
+            <div class="auth-mini-list">
+              <span id="dashboardUid">UID: -</span>
+              <span id="dashboardRole">Role: Player</span>
+            </div>
+          </article>
+          <article class="feature-card dashboard-card">
+            <h3>Wallet Status</h3>
+            <div class="stat-line">
+              <span>Total Deposits</span>
+              <strong id="dashboardDepositCount">0</strong>
+            </div>
+            <div class="stat-line">
+              <span>Pending Requests</span>
+              <strong id="dashboardPendingCount">0</strong>
+            </div>
+            <div class="stat-line">
+              <span>Bonus Balance</span>
+              <strong id="dashboardBonusBalance">Rs 0</strong>
+            </div>
+          </article>
+          <article class="feature-card dashboard-card">
+            <h3>Referral Center</h3>
+            <div class="auth-mini-list">
+              <span id="dashboardReferralCode">Code: -</span>
+              <span id="dashboardReferralCount">Referrals: 0</span>
+            </div>
+            <div class="stat-line">
+              <span>Rewarded Referrals</span>
+              <strong id="dashboardRewardCount">0</strong>
+            </div>
+          </article>
+          <article class="feature-card dashboard-card">
+            <h3>Quick Actions</h3>
+            <div class="dashboard-actions">
+              <button class="secondary-button inline-button" id="dashboardDepositButton">Open Deposit</button>
+              <button class="ghost-button inline-button" id="logoutButton">Logout</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt-section hidden" id="adminSection">
+        <div class="section-heading">
+          <span>Private Admin Panel</span>
+          <h2>Host tournaments, review entries, and manage player-side actions</h2>
+        </div>
+
+        <div class="admin-grid">
+          <article class="feature-card dashboard-card">
+            <h3>Admin Summary</h3>
+            <div class="stat-line">
+              <span>Total Users</span>
+              <strong id="adminUserCount">0</strong>
+            </div>
+            <div class="stat-line">
+              <span>Deposit Requests</span>
+              <strong id="adminDepositCount">0</strong>
+            </div>
+            <div class="stat-line">
+              <span>Team Registrations</span>
+              <strong id="adminRegistrationCount">0</strong>
+            </div>
+            <div class="stat-line">
+              <span>Referral Bonuses</span>
+              <strong id="adminBonusCount">0</strong>
+            </div>
+            <div class="stat-line">
+              <span>Total Tournaments</span>
+              <strong id="adminTournamentCount">0</strong>
+            </div>
+          </article>
+
+          <article class="feature-card admin-table-card">
+            <div class="admin-card-head">
+              <h3>Create Tournament</h3>
+            </div>
+            <form class="register-form" id="tournamentForm">
+              <label>
+                Tournament Title
+                <input type="text" name="title" placeholder="Enter tournament title" required>
+              </label>
+              <label>
+                Mode
+                <input type="text" name="mode" placeholder="Solo / Squad / Clash Squad" required>
+              </label>
+              <label>
+                Description
+                <input type="text" name="description" placeholder="Short tournament description" required>
+              </label>
+              <label>
+                Start Date
+                <input type="text" name="startDate" placeholder="20 April 2026" required>
+              </label>
+              <label>
+                Entry Fee
+                <input type="text" name="entryFee" placeholder="Rs 199 per squad" required>
+              </label>
+              <label>
+                Prize Pool
+                <input type="text" name="prizePool" placeholder="Rs 50,000" required>
+              </label>
+              <label>
+                Visibility
+                <select name="status" required>
+                  <option value="published">Public</option>
+                  <option value="draft">Draft</option>
+                </select>
+              </label>
+              <button class="primary-button submit-button" type="submit">Create Tournament</button>
+              <p class="form-message" id="tournamentMessage"></p>
+            </form>
+          </article>
+
+          <article class="feature-card admin-table-card">
+            <div class="admin-card-head">
+              <h3>Recent Deposits</h3>
+              <button class="ghost-button inline-button" id="adminLogoutButton">Hide Panel</button>
+            </div>
+            <div class="admin-table" id="depositList"></div>
+          </article>
+
+          <article class="feature-card admin-table-card">
+            <div class="admin-card-head">
+              <h3>Recent Registrations</h3>
+            </div>
+            <div class="admin-table" id="registrationList"></div>
+          </article>
+
+          <article class="feature-card admin-table-card">
+            <div class="admin-card-head">
+              <h3>Hosted Tournaments</h3>
+            </div>
+            <div class="admin-table" id="tournamentList"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <div class="footer-brand">
+          <img class="brand-logo footer-logo" src="arenax-battle-logo.svg" alt="RiftRush logo">
+          <h3>RiftRush</h3>
+        </div>
+        <p>Distinct tournament gaming website designed to lead into a stronger app experience later.</p>
+      </div>
+      <div class="footer-actions">
+        <button class="ghost-button footer-admin-button" id="openAdminAccess">Organizer Access</button>
+        <a href="#home">Back to top</a>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal hidden" id="registerModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal="register"></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close-button="register" aria-label="Close modal">x</button>
+      <span class="eyebrow">Contest Entry</span>
+      <h2>Register your Free Fire squad</h2>
+      <form class="register-form" id="registerForm">
+        <label>
+          Squad Name
+          <input type="text" name="teamName" placeholder="Enter squad name" required>
+        </label>
+        <label>
+          Captain Email
+          <input type="email" name="email" placeholder="Enter captain email" required>
+        </label>
+        <label>
+          Captain UID
+          <input type="text" name="uid" placeholder="Enter Free Fire UID" required>
+        </label>
+        <label>
+          Tournament
+          <select name="game" required>
+            <option value="">Select tournament</option>
+            <option value="RiftRush Prime Clash">RiftRush Prime Clash</option>
+            <option value="Neon Knockout Cup">Neon Knockout Cup</option>
+            <option value="Last Drop Solo Series">Last Drop Solo Series</option>
+          </select>
+        </label>
+        <button class="primary-button submit-button" type="submit">Submit Registration</button>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="authModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal="auth"></div>
+    <div class="modal-card auth-modal-card">
+      <button class="modal-close" data-close-button="auth" aria-label="Close modal">x</button>
+      <div class="auth-tabs">
+        <button class="auth-tab active" type="button" data-tab="login">Login</button>
+        <button class="auth-tab" type="button" data-tab="signup">Signup</button>
+      </div>
+
+      <div class="auth-panel active" id="loginPanel">
+        <span class="eyebrow">Player Login</span>
+        <h2>Return to RiftRush</h2>
+        <form class="register-form" id="loginForm">
+          <label>
+            Email
+            <input type="email" name="loginEmail" placeholder="Enter your email" required>
+          </label>
+          <label>
+            Password
+            <input type="password" name="loginPassword" placeholder="Enter your password" required>
+          </label>
+          <button class="primary-button submit-button" type="submit">Login</button>
+          <p class="form-message" id="loginMessage"></p>
+        </form>
+      </div>
+
+      <div class="auth-panel" id="signupPanel">
+        <span class="eyebrow">Create Account</span>
+        <h2>Join RiftRush and enter faster matches</h2>
+        <form class="register-form" id="signupForm">
+          <label>
+            Full Name
+            <input type="text" name="fullName" placeholder="Enter your full name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="signupEmail" placeholder="Enter your email" required>
+          </label>
+          <label>
+            Free Fire UID
+            <input type="text" name="playerUid" placeholder="Enter your UID" required>
+          </label>
+          <label>
+            Password
+            <input type="password" name="signupPassword" placeholder="Create a password" required>
+          </label>
+          <label>
+            Referral Code
+            <input type="text" name="referredBy" placeholder="Enter referral code if you have one">
+          </label>
+          <label>
+            Account Type
+            <select name="role" required>
+              <option value="Player">Player</option>
+              <option value="Captain">Captain</option>
+            </select>
+          </label>
+          <button class="primary-button submit-button" type="submit">Create Account</button>
+          <p class="form-message" id="signupMessage"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="adminModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal="admin"></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close-button="admin" aria-label="Close modal">x</button>
+      <span class="eyebrow">Private Host Access</span>
+      <h2>Unlock host panel</h2>
+      <form class="register-form" id="adminForm">
+        <label>
+          Admin Email
+          <input type="email" name="adminEmail" placeholder="Enter organizer email" required>
+        </label>
+        <label>
+          Secret Access Key
+          <input type="password" name="adminKey" placeholder="Enter secret key" required>
+        </label>
+        <button class="primary-button submit-button" type="submit">Open Admin Panel</button>
+        <p class="form-message" id="adminMessage"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

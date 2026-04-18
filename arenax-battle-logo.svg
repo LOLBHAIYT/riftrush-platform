@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-labelledby="title desc">
+  <title id="title">RiftRush logo</title>
+  <desc id="desc">A distinct gaming logo with an angular masked mascot and RiftRush wordmark.</desc>
+  <defs>
+    <linearGradient id="rrRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14d8ff"/>
+      <stop offset="100%" stop-color="#ff4d6d"/>
+    </linearGradient>
+    <linearGradient id="rrHood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161a31"/>
+      <stop offset="100%" stop-color="#28224b"/>
+    </linearGradient>
+    <linearGradient id="rrAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7df9ff"/>
+      <stop offset="100%" stop-color="#15bffd"/>
+    </linearGradient>
+    <linearGradient id="rrText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b7d9ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="220" rx="34" fill="#070b17"/>
+  <g transform="translate(32 10)">
+    <path d="M145 26C191 26 227 54 236 101C227 92 214 86 199 82C194 59 175 47 145 47C115 47 96 59 91 82C76 86 63 92 54 101C63 54 99 26 145 26Z" fill="url(#rrHood)"/>
+    <circle cx="145" cy="96" r="63" fill="#0d1224"/>
+    <circle cx="145" cy="96" r="55" fill="none" stroke="url(#rrRing)" stroke-width="14"/>
+    <path d="M86 103C92 75 113 56 145 56C177 56 198 75 204 103L188 94C178 74 166 67 145 67C124 67 112 74 102 94L86 103Z" fill="#1a1f39"/>
+    <path d="M99 109C99 79 118 59 145 59C172 59 191 79 191 109V120C191 145 172 163 145 163C118 163 99 145 99 120V109Z" fill="#11172b"/>
+    <path d="M116 111C124 103 134 98 145 98C156 98 166 103 174 111L168 124C160 120 153 118 145 118C137 118 130 120 122 124L116 111Z" fill="#15bffd"/>
+    <path d="M113 130C122 122 133 118 145 118C157 118 168 122 177 130C167 140 157 145 145 145C133 145 123 140 113 130Z" fill="#ff4d6d"/>
+    <path d="M118 132H172C165 140 156 145 145 145C134 145 125 140 118 132Z" fill="#0b1325"/>
+    <path d="M113 101L92 88L86 113L107 112Z" fill="url(#rrAccent)"/>
+    <path d="M177 101L198 88L204 113L183 112Z" fill="url(#rrAccent)"/>
+    <path d="M103 152L125 137L137 153L120 169Z" fill="#5a4fff"/>
+    <path d="M187 152L165 137L153 153L170 169Z" fill="#5a4fff"/>
+  </g>
+  <g transform="translate(30 178)">
+    <text x="145" y="0" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="34" font-weight="700" fill="url(#rrText)" letter-spacing="2">RIFTRUSH</text>
+    <text x="145" y="28" text-anchor="middle" font-family="Outfit, Arial, sans-serif" font-size="16" font-weight="700" fill="#14d8ff" letter-spacing="5">TOURNAMENTS</text>
+  </g>
+</svg>

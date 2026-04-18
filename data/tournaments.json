@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ff-pro-squad-clash",
+    "title": "RiftRush Prime Clash",
+    "mode": "Free Fire Max",
+    "description": "4-player squad knockouts with custom room codes, observer panel, and booyah bonus points.",
+    "startDate": "18 April 2026",
+    "entryFee": "Rs 199 per squad",
+    "prizePool": "Rs 50,000",
+    "status": "published"
+  },
+  {
+    "id": "rush-arena-night-cup",
+    "title": "Neon Knockout Cup",
+    "mode": "Clash Squad",
+    "description": "Fast-paced 4v4 rounds for mobile teams who want shorter and high-energy matches.",
+    "startDate": "21 April 2026",
+    "entryFee": "Free",
+    "prizePool": "Rs 12,500",
+    "status": "published"
+  },
+  {
+    "id": "lone-wolf-master-series",
+    "title": "Last Drop Solo Series",
+    "mode": "Solo Survival",
+    "description": "Solo eliminations with performance ladders, weekly qualifiers, and final redemption rooms.",
+    "startDate": "26 April 2026",
+    "entryFee": "Rs 49 per player",
+    "prizePool": "Rs 8,000",
+    "status": "published"
+  }
+]

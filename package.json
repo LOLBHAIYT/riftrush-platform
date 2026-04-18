@@ -1,0 +1,17 @@
+{
+  "name": "arenax-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RiftRush tournament platform with separated backend data storage and app-wrapper readiness.",
+  "scripts": {
+    "start": "node server.js",
+    "app:sync": "npx cap sync android",
+    "app:open": "npx cap open android",
+    "app:build-help": "node scripts/app-build-help.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/core": "^7.0.0"
+  }
+}
