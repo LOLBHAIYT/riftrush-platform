@@ -24,8 +24,7 @@
           </div>
         </div>
         <div class="topbar-actions">
-          <button class="ghost-button" id="openAdminNav">Admin Login</button>
-          <button class="ghost-button" id="openAuth">Login / Signup</button>
+          <button class="ghost-button" id="openAuth">Login</button>
           <button class="primary-button" id="installAppButton">Install App</button>
         </div>
       </nav>
@@ -40,7 +39,7 @@
           </p>
           <div class="hero-cta">
             <button class="primary-button" id="heroRegister">Join Live Match</button>
-            <button class="secondary-button" id="heroAuth">Create Account</button>
+            <button class="secondary-button" id="heroAuth">Player Login</button>
           </div>
           <p class="form-message" id="installMessage"></p>
         </div>
@@ -386,7 +385,6 @@
         <strong>RiftRush</strong>
         <p>Original tournament app-style website for Free Fire contests, rankings, wallet flow, and referrals.</p>
       </div>
-      <button class="ghost-button" id="openAdminAccess">Organizer Access</button>
     </footer>
   </div>
 
@@ -428,9 +426,8 @@
     <div class="modal-backdrop" data-close-modal="auth"></div>
     <div class="modal-card auth-modal-card">
       <button class="modal-close" data-close-button="auth" aria-label="Close modal">x</button>
-      <div class="auth-tabs">
+      <div class="auth-tabs auth-tabs-single">
         <button class="auth-tab active" type="button" data-tab="login">Login</button>
-        <button class="auth-tab" type="button" data-tab="signup">Signup</button>
       </div>
 
       <div class="auth-panel active" id="loginPanel">
@@ -450,7 +447,7 @@
         </form>
       </div>
 
-      <div class="auth-panel" id="signupPanel">
+      <div class="auth-panel hidden-signup-panel" id="signupPanel">
         <span class="eyebrow">Create Account</span>
         <h2>Join RiftRush and get your player access</h2>
         <form class="register-form" id="signupForm">

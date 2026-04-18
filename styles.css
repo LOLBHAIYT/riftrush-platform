@@ -124,6 +124,14 @@ a {
   align-items: center;
 }
 
+.auth-tabs-single {
+  justify-content: flex-start;
+}
+
+.hidden-signup-panel {
+  display: none !important;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
