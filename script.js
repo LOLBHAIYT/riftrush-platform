@@ -72,6 +72,12 @@ const depositList = document.getElementById("depositList");
 const registrationList = document.getElementById("registrationList");
 const tournamentList = document.getElementById("tournamentList");
 
+function bindClick(element, handler) {
+  if (element) {
+    element.addEventListener("click", handler);
+  }
+}
+
 function openModal(modal) {
   modal.classList.remove("hidden");
   modal.setAttribute("aria-hidden", "false");
@@ -169,7 +175,9 @@ function renderTournaments(tournaments) {
 
 function renderDashboard(dashboard) {
   if (!dashboard) {
-    dashboardSection.classList.add("hidden");
+    if (dashboardSection) {
+      dashboardSection.classList.add("hidden");
+    }
     return;
   }
 
@@ -184,7 +192,9 @@ function renderDashboard(dashboard) {
   dashboardReferralCode.textContent = `Code: ${dashboard.user.referralCode}`;
   dashboardReferralCount.textContent = `Referrals: ${dashboard.stats.referralCount}`;
   dashboardRewardCount.textContent = `${dashboard.stats.rewardedReferralCount}`;
-  dashboardSection.classList.remove("hidden");
+  if (dashboardSection) {
+    dashboardSection.classList.remove("hidden");
+  }
   switchScreen("account");
 }
 
@@ -314,31 +324,31 @@ screenButtons.forEach((button) => {
   });
 });
 
-openRegisterButton.addEventListener("click", () => openModal(registerModal));
+bindClick(openRegisterButton, () => openModal(registerModal));
 extraRegisterButtons.forEach((button) => {
   button.addEventListener("click", () => openModal(registerModal));
 });
-heroRegisterButton.addEventListener("click", () => openModal(registerModal));
-openAuthButton.addEventListener("click", () => {
+bindClick(heroRegisterButton, () => openModal(registerModal));
+bindClick(openAuthButton, () => {
   activateTab("login");
   openModal(authModal);
 });
-heroAuthButton.addEventListener("click", () => {
+bindClick(heroAuthButton, () => {
   activateTab("signup");
   openModal(authModal);
 });
-openAdminAccessButton.addEventListener("click", () => openModal(adminModal));
-openAdminNavButton.addEventListener("click", () => openModal(adminModal));
-demoAuthSwitch.addEventListener("click", () => {
+bindClick(openAdminAccessButton, () => openModal(adminModal));
+bindClick(openAdminNavButton, () => openModal(adminModal));
+bindClick(demoAuthSwitch, () => {
   activateTab("login");
   openModal(authModal);
 });
-dashboardDepositButton.addEventListener("click", () => {
+bindClick(dashboardDepositButton, () => {
   switchScreen("wallet");
   document.getElementById("wallet").scrollIntoView({ behavior: "smooth" });
 });
 
-installAppButton.addEventListener("click", async () => {
+bindClick(installAppButton, async () => {
   if (!deferredInstallPrompt) {
     formatMessage(installMessage, getInstallHelpText());
     return;
@@ -397,8 +407,10 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
+bindClick(menuToggle, () => {
+  if (navLinks) {
+    navLinks.classList.toggle("open");
+  }
 });
 
 authTabs.forEach((tab) => {
@@ -585,13 +597,13 @@ tournamentForm.addEventListener("submit", async (event) => {
   }
 });
 
-logoutButton.addEventListener("click", () => {
+bindClick(logoutButton, () => {
   currentUser = null;
   renderDashboard(null);
   switchScreen("home");
 });
 
-adminLogoutButton.addEventListener("click", () => {
+bindClick(adminLogoutButton, () => {
   adminToken = "";
   renderAdmin(null);
 });
