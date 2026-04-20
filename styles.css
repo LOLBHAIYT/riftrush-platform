@@ -27,6 +27,7 @@ body {
   margin: 0;
   color: var(--text);
   font-family: "Outfit", sans-serif;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top center, rgba(138, 46, 255, 0.28), transparent 22%),
     radial-gradient(circle at 85% 8%, rgba(255, 78, 215, 0.16), transparent 15%),
@@ -912,6 +913,9 @@ a {
   place-items: center;
   padding: 18px;
   z-index: 60;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-backdrop {
@@ -928,6 +932,10 @@ a {
   border-radius: 28px;
   z-index: 1;
   background: linear-gradient(180deg, rgba(28, 7, 46, 0.98), rgba(8, 2, 14, 0.98));
+  max-height: calc(100vh - 36px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .auth-modal-card {
@@ -1058,6 +1066,65 @@ a {
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .modal {
+    place-items: start center;
+    padding: 10px;
+  }
+
+  .modal-card,
+  .auth-modal-card {
+    width: 100%;
+    max-height: calc(100dvh - 20px);
+    border-radius: 22px;
+    padding: 18px;
+    margin: 0 auto;
+  }
+
+  #authModal {
+    padding: 0;
+    place-items: stretch;
+  }
+
+  #authModal .modal-backdrop {
+    display: none;
+  }
+
+  #authModal .auth-modal-card {
+    width: 100%;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    margin: 0;
+    padding: 18px 16px calc(28px + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+  }
+
+  .register-form input,
+  .register-form select,
+  .primary-button,
+  .secondary-button,
+  .ghost-button,
+  .auth-tab,
+  .menu-row {
+    min-height: 48px;
+  }
+
+  .auth-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding-bottom: 8px;
+    background: linear-gradient(180deg, rgba(28, 7, 46, 0.98), rgba(28, 7, 46, 0.9));
+  }
+
+  .auth-splash {
+    margin-top: 18px;
+  }
+
+  .register-form {
+    padding-bottom: 18px;
   }
 
   .auth-splash {
