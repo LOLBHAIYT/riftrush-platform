@@ -57,6 +57,7 @@ a {
 
 .web-hero,
 .promo-stats article,
+.apk-card,
 .phone-shell,
 .site-footer,
 .modal-card {
@@ -122,14 +123,6 @@ a {
 .topbar-actions {
   grid-auto-flow: column;
   align-items: center;
-}
-
-.auth-tabs-single {
-  justify-content: flex-start;
-}
-
-.hidden-signup-panel {
-  display: none !important;
 }
 
 .hero-grid {
@@ -354,6 +347,39 @@ a {
 
 .promo-stats span {
   color: var(--muted);
+}
+
+.apk-section {
+  margin: 0 0 26px;
+}
+
+.apk-card {
+  padding: 24px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at right, rgba(39, 228, 255, 0.14), transparent 26%),
+    linear-gradient(180deg, rgba(25, 8, 40, 0.98), rgba(10, 3, 17, 0.98));
+}
+
+.apk-card h2 {
+  margin: 14px 0 10px;
+  font-family: "Oxanium", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.apk-actions {
+  margin-top: 18px;
+}
+
+.apk-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.disabled-apk {
+  opacity: 0.7;
 }
 
 .app-stage {
@@ -906,6 +932,10 @@ a {
 
 .auth-modal-card {
   width: min(100%, 560px);
+  background:
+    radial-gradient(circle at top right, rgba(255, 78, 215, 0.18), transparent 22%),
+    radial-gradient(circle at top left, rgba(39, 228, 255, 0.12), transparent 20%),
+    linear-gradient(180deg, rgba(28, 7, 46, 0.98), rgba(8, 2, 14, 0.98));
 }
 
 .modal-close {
@@ -919,6 +949,33 @@ a {
   background: transparent;
   color: var(--text);
   cursor: pointer;
+}
+
+.auth-splash {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding: 14px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.auth-splash-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  flex: 0 0 auto;
+}
+
+.auth-splash h2 {
+  margin-bottom: 6px;
+}
+
+.auth-splash p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .auth-tabs {
@@ -939,6 +996,10 @@ a {
 
 .auth-panel.active {
   display: block;
+}
+
+.modal-card.auth-locked .modal-close {
+  display: none;
 }
 
 .form-message.success {
@@ -995,6 +1056,11 @@ a {
   }
 
   .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .auth-splash {
     flex-direction: column;
     align-items: flex-start;
   }

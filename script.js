@@ -13,6 +13,7 @@ const API = {
 let currentUser = null;
 let adminToken = "";
 let deferredInstallPrompt = null;
+let authRequired = true;
 
 const registerModal = document.getElementById("registerModal");
 const authModal = document.getElementById("authModal");
@@ -31,6 +32,10 @@ const depositForm = document.getElementById("depositForm");
 const adminForm = document.getElementById("adminForm");
 const tournamentForm = document.getElementById("tournamentForm");
 const installAppButton = document.getElementById("installAppButton");
+const downloadApkButton = document.getElementById("downloadApkButton");
+const heroDownloadApkButton = document.getElementById("heroDownloadApk");
+const apkDownloadLink = document.getElementById("apkDownloadLink");
+const apkHelpButton = document.getElementById("apkHelpButton");
 const formMessage = document.getElementById("formMessage");
 const loginMessage = document.getElementById("loginMessage");
 const signupMessage = document.getElementById("signupMessage");
@@ -38,6 +43,7 @@ const depositMessage = document.getElementById("depositMessage");
 const adminMessage = document.getElementById("adminMessage");
 const tournamentMessage = document.getElementById("tournamentMessage");
 const installMessage = document.getElementById("installMessage");
+const apkMessage = document.getElementById("apkMessage");
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 const authTabs = document.querySelectorAll(".auth-tab");
@@ -71,6 +77,7 @@ const adminTournamentCount = document.getElementById("adminTournamentCount");
 const depositList = document.getElementById("depositList");
 const registrationList = document.getElementById("registrationList");
 const tournamentList = document.getElementById("tournamentList");
+const authModalCard = authModal ? authModal.querySelector(".modal-card") : null;
 
 function bindClick(element, handler) {
   if (element) {
@@ -78,12 +85,30 @@ function bindClick(element, handler) {
   }
 }
 
+function syncAuthUi() {
+  if (authModalCard) {
+    authModalCard.classList.toggle("auth-locked", authRequired && !currentUser);
+  }
+
+  if (openAuthButton) {
+    openAuthButton.textContent = currentUser ? "My Account" : "Login";
+  }
+
+  if (heroAuthButton) {
+    heroAuthButton.textContent = currentUser ? "My Account" : "Player Login";
+  }
+}
+
 function openModal(modal) {
+  syncAuthUi();
   modal.classList.remove("hidden");
   modal.setAttribute("aria-hidden", "false");
 }
 
 function closeModal(modal) {
+  if (modal === authModal && authRequired && !currentUser) {
+    return;
+  }
   modal.classList.add("hidden");
   modal.setAttribute("aria-hidden", "true");
 }
@@ -128,6 +153,10 @@ function getInstallHelpText() {
   }
 
   return "Browser menu me jaake 'Install app' ya 'Add to Home screen' option use karo.";
+}
+
+function getApkInstallText() {
+  return "APK button tab kaam karega jab real .apk file upload ho jayegi. Abhi build karke us file ko server ya GitHub release par rakhna hoga.";
 }
 
 async function apiRequest(url, options = {}) {
@@ -195,7 +224,6 @@ function renderDashboard(dashboard) {
   if (dashboardSection) {
     dashboardSection.classList.remove("hidden");
   }
-  switchScreen("account");
 }
 
 function renderAdmin(adminData) {
@@ -295,6 +323,10 @@ async function refreshAdminData() {
 
 function initializeApp() {
   loadPublicTournaments();
+  activateTab("login");
+  switchScreen("home");
+  syncAuthUi();
+  openModal(authModal);
 
   window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
@@ -330,11 +362,19 @@ extraRegisterButtons.forEach((button) => {
 });
 bindClick(heroRegisterButton, () => openModal(registerModal));
 bindClick(openAuthButton, () => {
+  if (currentUser) {
+    switchScreen("account");
+    return;
+  }
   activateTab("login");
   openModal(authModal);
 });
 bindClick(heroAuthButton, () => {
-  activateTab("signup");
+  if (currentUser) {
+    switchScreen("account");
+    return;
+  }
+  activateTab("login");
   openModal(authModal);
 });
 bindClick(openAdminAccessButton, () => openModal(adminModal));
@@ -364,6 +404,27 @@ bindClick(installAppButton, async () => {
   }
 
   deferredInstallPrompt = null;
+});
+
+bindClick(downloadApkButton, () => {
+  document.getElementById("download").scrollIntoView({ behavior: "smooth" });
+  formatMessage(apkMessage, getApkInstallText());
+});
+
+bindClick(heroDownloadApkButton, () => {
+  document.getElementById("download").scrollIntoView({ behavior: "smooth" });
+  formatMessage(apkMessage, getApkInstallText());
+});
+
+bindClick(apkHelpButton, () => {
+  formatMessage(apkMessage, "Phone me APK install karne ke liye: file download karo, open karo, 'Install unknown apps' allow karo, phir Install dabao.");
+});
+
+bindClick(apkDownloadLink, (event) => {
+  if (apkDownloadLink.getAttribute("href") === "#") {
+    event.preventDefault();
+    formatMessage(apkMessage, getApkInstallText());
+  }
 });
 
 authModeButtons.forEach((button) => {
@@ -441,9 +502,8 @@ signupForm.addEventListener("submit", async (event) => {
 
     setTimeout(() => {
       activateTab("login");
-      closeModal(authModal);
       formatMessage(signupMessage, "");
-      switchScreen("account");
+      formatMessage(loginMessage, "Account created. Ab login karo aur home screen kholo.", true);
     }, 1700);
   } catch (error) {
     formatMessage(signupMessage, error.message);
@@ -468,9 +528,11 @@ loginForm.addEventListener("submit", async (event) => {
     loginForm.reset();
 
     setTimeout(() => {
+      authRequired = false;
+      syncAuthUi();
       closeModal(authModal);
       formatMessage(loginMessage, "");
-      switchScreen("account");
+      switchScreen("home");
     }, 1400);
   } catch (error) {
     formatMessage(loginMessage, error.message);
@@ -599,8 +661,11 @@ tournamentForm.addEventListener("submit", async (event) => {
 
 bindClick(logoutButton, () => {
   currentUser = null;
+  authRequired = true;
+  syncAuthUi();
   renderDashboard(null);
-  switchScreen("home");
+  activateTab("login");
+  openModal(authModal);
 });
 
 bindClick(adminLogoutButton, () => {

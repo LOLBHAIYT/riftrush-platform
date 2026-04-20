@@ -25,6 +25,7 @@
         </div>
         <div class="topbar-actions">
           <button class="ghost-button" id="openAuth">Login</button>
+          <button class="ghost-button" id="downloadApkButton">Download APK</button>
           <button class="primary-button" id="installAppButton">Install App</button>
         </div>
       </nav>
@@ -39,6 +40,7 @@
           </p>
           <div class="hero-cta">
             <button class="primary-button" id="heroRegister">Join Live Match</button>
+            <button class="secondary-button" id="heroDownloadApk">Download APK</button>
             <button class="secondary-button" id="heroAuth">Player Login</button>
           </div>
           <p class="form-message" id="installMessage"></p>
@@ -65,6 +67,19 @@
       <article><strong>100K+</strong><span>Players</span></article>
       <article><strong>1.2L+</strong><span>Rewards Paid</span></article>
       <article><strong>24/7</strong><span>Support</span></article>
+    </section>
+
+    <section class="apk-section" id="download">
+      <article class="apk-card">
+        <span class="eyebrow">Android App</span>
+        <h2>Download RiftRush APK</h2>
+        <p>Website app install alag hai. Real APK download karne ke liye button use karo jab APK file upload ho jaye.</p>
+        <div class="hero-cta apk-actions">
+          <a class="primary-button apk-link disabled-apk" id="apkDownloadLink" href="#" aria-disabled="true">Download APK</a>
+          <button class="ghost-button" id="apkHelpButton" type="button">How To Install</button>
+        </div>
+        <p class="form-message" id="apkMessage"></p>
+      </article>
     </section>
 
     <section class="app-stage">
@@ -371,9 +386,9 @@
         <section class="dashboard-anchor hidden" id="dashboardSection"></section>
 
         <nav class="bottom-nav">
-          <button class="bottom-nav-item active" data-tab-target="earn" type="button"><span>Earn</span></button>
+          <button class="bottom-nav-item" data-tab-target="earn" type="button"><span>Earn</span></button>
           <button class="bottom-nav-item" data-tab-target="rank" type="button"><span>Rank</span></button>
-          <button class="bottom-nav-item" data-tab-target="home" type="button"><span>Home</span></button>
+          <button class="bottom-nav-item active" data-tab-target="home" type="button"><span>Home</span></button>
           <button class="bottom-nav-item" data-tab-target="wallet" type="button"><span>Wallet</span></button>
           <button class="bottom-nav-item" data-tab-target="account" type="button"><span>Account</span></button>
         </nav>
@@ -425,9 +440,18 @@
   <div class="modal hidden" id="authModal" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal="auth"></div>
     <div class="modal-card auth-modal-card">
+      <div class="auth-splash">
+        <img class="auth-splash-logo" src="arenax-battle-logo.svg" alt="RiftRush logo">
+        <div>
+          <span class="eyebrow">Player Access</span>
+          <h2>Enter RiftRush</h2>
+          <p>Login ya signup karke seedha contest home par jao.</p>
+        </div>
+      </div>
       <button class="modal-close" data-close-button="auth" aria-label="Close modal">x</button>
-      <div class="auth-tabs auth-tabs-single">
+      <div class="auth-tabs">
         <button class="auth-tab active" type="button" data-tab="login">Login</button>
+        <button class="auth-tab" type="button" data-tab="signup">Signup</button>
       </div>
 
       <div class="auth-panel active" id="loginPanel">
@@ -447,7 +471,7 @@
         </form>
       </div>
 
-      <div class="auth-panel hidden-signup-panel" id="signupPanel">
+      <div class="auth-panel" id="signupPanel">
         <span class="eyebrow">Create Account</span>
         <h2>Join RiftRush and get your player access</h2>
         <form class="register-form" id="signupForm">
